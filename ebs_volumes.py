@@ -1,4 +1,4 @@
-mport boto3
+import boto3
 import json
 
 ec2 = boto3.resource('ec2',region_name='us-east-1')
@@ -12,20 +12,17 @@ filtered = base.filter(Filters=filters)
 myList=[]
 def lambda_handler(event, context):
       deleteEbsVolumes()
-        copySnapshots()
-          return myList
+      copySnapshots()
+      return myList
         
 
-      def deleteEbsVolumes():
+def deleteEbsVolumes():
             for vol in filtered:
                     snap = vol.create_snapshot(vol.id)
                         print ("Snapshot taken successfully")
                             vol.delete(vol.id)
                                 print ("Deleting the orphaned EBS volumes" +vol.id)
                                     myList.extend([vol.id,snap.id])
-                                       
-
-                                           
-                                           def copySnapshots():
-                                                  print (myList)
-
+                                        
+def copySnapshots()                                          
+  print (myList)
