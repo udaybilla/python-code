@@ -1,6 +1,7 @@
 # Object Oriented Programming Concepts in Python
 
 # Attributes, methods and class
+
 class Humans():
     
     # class object attribute
@@ -26,14 +27,20 @@ fav_car_obj.car_num(3)
 
 
 # Inheritance 
+  ## Uses: Ability to resue code
+          #Reduce the complexity of the code
+
 class CookeryPortal():
     def __init__(self):
         print("this is a portal where new chefs can refer recipes")
     def recipes(self,name):
         print("These are the recipes {}".format(name))
-#class chef(CookeryPortal):
-
-
+class Chef(CookeryPortal):
+    def __init__(self):
+        CookeryPortal.__init__(self)
+        print("this is chef boundary")
+mychef = Chef()
+mychef.recipes('chicken')
 
 
 
