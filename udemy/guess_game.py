@@ -1,5 +1,6 @@
 # Game for user random guess of string 'blue' position  in list
 # Interaction between functions takes place in this game project 
+
 from random import shuffle
 
 #shuffle the list

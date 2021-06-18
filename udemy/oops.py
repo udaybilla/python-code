@@ -21,7 +21,7 @@ class Humans():
         print("hey my name is {} and my car number is {}".format(self.name,num))
 
 fav_car_obj=Humans(color='blue',name='uday',car='Jaguar') #creating instance or object for class
-print(type(fav_car_obj.species))
+print(fav_car_obj.species) # accessing the variable
 print("hey\t" +fav_car_obj.name + "\thas\t" + fav_car_obj.color + "\tcolor\t" + fav_car_obj.car)
 fav_car_obj.car_num(3)
 
@@ -45,5 +45,15 @@ mychef.recipes('chicken')
 
 
 
-
 # Polymorphism
+class Friend1():
+    def __init__(self,name):
+        self.name = name
+    def fav_color(self):
+        return self.name + 'blue'
+class Swetha():
+    def __init__(self,name):
+        self.name = name
+    def fav_color(self):
+        return self.name + "black"
+uday_obj = Uday('')
