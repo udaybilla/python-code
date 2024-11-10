@@ -1,0 +1,13 @@
+name: 'Python Syntax and Linting Checks'
+description: 'Checks Python syntax, indentation, and linting for changed files'
+inputs:
+  files:
+    description: 'List of changed Python files'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - run: |
+        pip install pylint
+        python $GITHUB_WORKSPACE/.github/actions/python-checks/py-checks.py ${{ inputs.files }}
+      shell: bash

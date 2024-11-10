@@ -11,8 +11,14 @@ def run_command(command):
         print(result.stdout.decode('utf-8'))
 
 def main():
-    # Run pylint for linting and code quality checks
-    run_command("pylint **/*.py")
+    if len(sys.argv) < 2:
+        print("Usage: python py-checks.py <file1> <file2> ...")
+        sys.exit(1)
+
+    files = sys.argv[1:]
+    for file in files:
+        # Run pylint for linting and code quality checks on each file
+        run_command(f"pylint {file}")
 
 if __name__ == "__main__":
     main()
