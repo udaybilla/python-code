@@ -3,6 +3,6 @@ description: 'Checks Python syntax, indentation, and linting'
 runs:
   using: 'composite'
   steps:
-    - run: python /py-checks.py
+    - run: python ./py-checks.py
       shell: bash
 file: py-checks.py
