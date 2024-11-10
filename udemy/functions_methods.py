@@ -8,6 +8,7 @@
 # Functions
 def my_name():
     print("hello")
+    print("hey uday how are you")
 my_name()
 
 #Function with a parameter and a default value
