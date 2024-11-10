@@ -10,7 +10,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
+        with: 
+          fetch-depth: 0 # Fetch the full history
+          
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
