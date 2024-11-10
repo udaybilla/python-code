@@ -1,14 +1,11 @@
-name: Pylint - Custom Action
+name: Run Python Checks on Changed Files
 on:
-  push:
-    branches:
-      - master
   pull_request:
-    branches:
-      - master
+    paths:
+      - '**/*.py'
 
 jobs:
-  run-action:
+  run-python-checks:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -19,9 +16,14 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install pylint 
-        run: pip install pylint
+      - name: Get list of changed Python files
+        id: changed_files
+        run: |
+          git fetch origin main
+          changed_files=$(git diff --name-only origin/main...HEAD -- '*.py')
+          echo "files=$changed_files" >> $GITHUB_ENV
 
-      - name: Run Custom Action
+      - name: Run Python Checks Action
         uses: ./.github/actions/python-checks
-        
+        with:
+          files: ${{ env.files }}
