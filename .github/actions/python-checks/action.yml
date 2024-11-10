@@ -4,5 +4,5 @@ runs:
   using: 'composite'
   steps:
     - run: python /py-checks.py
-      shell: python
+      shell: bash
 file: py-checks.py
