@@ -1,14 +1,12 @@
-my_lucky_number = 0
+MY_LUCKY_NUMBER = 0
 uday_list = [0, 1, 2, 3, "2"]
-
 
 def luck_number(my_list):
     for i in my_list:
-        if i % my_lucky_number == 0:
+        if i % MY_LUCKY_NUMBER == 0:
             print("luck")
         else:
             print("no luck")
-
 
 def main():
     try:
@@ -16,12 +14,14 @@ def main():
     except ZeroDivisionError as e:
         print("Cannot divide as it is not possible with the number in the list")
         print(f"error: {e}")
+    except ValueError as e:
+        print(f"ValueError occurred: {e}")
+    except TypeError as e:
+        print(f"TypeError occurred: {e}")
     except Exception as e:
-        # This will catch any other exceptions
-        print("An error occurred:", str(e))
+        print(f"An unexpected error occurred: {e}")
     finally:
         print("No matter what you are lucky")
-
 
 if __name__ == "__main__":
     main()
