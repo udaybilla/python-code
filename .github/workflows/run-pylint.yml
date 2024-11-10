@@ -19,6 +19,9 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Install pylint 
+        run: pip install pylint
+
       - name: Run Custom Action
         uses: ./.github/actions/python-checks
         
