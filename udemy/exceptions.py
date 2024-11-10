@@ -1,3 +1,5 @@
+# pylint: disable=C0114,C0116,W0718
+
 MY_LUCKY_NUMBER = 0
 uday_list = [0, 1, 2, 3, "2"]
 
