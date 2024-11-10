@@ -1,0 +1,8 @@
+name: 'Python Syntax and Linting Checks'
+description: 'Checks Python syntax, indentation, and linting'
+runs:
+  using: 'composite'
+  steps:
+    - run: python /py-checks.py
+      shell: python
+file: py-checks.py
