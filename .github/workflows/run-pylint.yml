@@ -23,8 +23,9 @@ jobs:
         run: |
           git fetch origin master 
           changed_files=$(git diff --name-only origin/master...HEAD -- '*.py') 
+          changed_files=$(echo "$changed_files" | sed "s|^|$GITHUB_WORKSPACE/|") # Prepend full path 
           changed_files=$(echo $changed_files | tr '\n' ' ') # Format as space-separated string 
-          echo "files=$GITHUB_WORKSPACE/$changed_files" >> $GITHUB_ENV 
+          echo "files=$changed_files" >> $GITHUB_ENV 
         shell: bash
       
       - name: Debug - Print changed files 
