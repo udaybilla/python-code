@@ -21,8 +21,8 @@ jobs:
       - name: Get list of changed Python files
         id: changed_files
         run: |
-          git fetch origin master
-          changed_files=$(git diff --name-only origin/master...HEAD -- '*.py')
+          git fetch origin master 
+          changed_files=$(git diff --name-only origin/master...HEAD -- '*.py' | xargs -n1 basename) 
           changed_files=$(echo $changed_files | tr '\n' ' ') # Format as space-separated string 
           echo "files=$changed_files" >> $GITHUB_ENV
         shell: bash
