@@ -25,7 +25,12 @@ jobs:
           changed_files=$(git diff --name-only origin/master...HEAD -- '*.py')
           changed_files=$(echo $changed_files | tr '\n' ' ') # Format as space-separated string 
           echo "files=$changed_files" >> $GITHUB_ENV
-
+        shell: bash
+      
+      - name: Debug - Print changed files 
+        run: echo ${{ env.files }}
+        shell: bash
+     
       - name: Run Python Checks Action
         uses: udaybilla/ubilla-actions/.github/actions/python-checks@pylint-v1.0.9
         with:
