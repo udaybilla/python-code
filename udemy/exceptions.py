@@ -24,7 +24,7 @@ def main():
         print(f"An unexpected error occurred: {e}")
     finally:
         print("No matter what you are lucky")
-        print("whats up buddy")
+        print("whats up buddy, how are you?")
 
 if __name__ == "__main__":
     main()
