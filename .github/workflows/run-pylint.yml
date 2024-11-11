@@ -27,6 +27,6 @@ jobs:
           echo "files=$changed_files" >> $GITHUB_ENV
 
       - name: Run Python Checks Action
-        uses: udaybilla/ubilla-actions/.github/actions/python-checks@pylint-v1.0.8
+        uses: udaybilla/ubilla-actions/.github/actions/python-checks@pylint-v1.0.9
         with:
           files: ${{ env.files }}
