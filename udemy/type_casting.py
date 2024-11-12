@@ -13,7 +13,7 @@ print("my new income would be: ", my_new_income)
 # Explicit type casting
 
 my_birth_day = '1'
-my_lucky_number = 3
+my_lucky_number = 2
 
 #now i need to explicit conversion to get the diff between them
 
